@@ -1,0 +1,51 @@
+<html>
+<link rel="stylesheet" href="./dictionary.css">
+<link rel="stylesheet" href="./fonts/css/all.css">
+
+<head>
+    <title>dictionary</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <form onsubmit=" return handleSubmit()">
+                <input type="text" placeholder="Enter prompt here" id="text">
+                <button id="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div id="display">
+                <h1 id="type"></h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("submit").addEventListener("click", function (e) {
+            e.preventDefault();
+            let type = document.createElement("h3")
+            let li = document.createElement("li");
+            let display = document.getElementById("display");
+            let text = document.getElementById("text").value;
+            console.log(text);
+            const key = "1a632f0a-a315-441e-86d6-9aa30a7799a8";
+            fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${text}?key=e8303a14-769a-4e3c-9f79-2552005455c4`)
+                .then(response => response.json())
+                .then(response => {
+                    for (i = 0; i < response.length; i++) {
+                        let type = document.createElement("h3");
+                        display.appendChild(type);
+                        type.innerHTML = `${response[i].fl}`
+                        console.log(response[i].fl);
+                        for (j = 0; j < response[i].shortdef.length; j++) {
+                            let li = document.createElement("li");
+                            li.innerHTML = `${response[i].shortdef[j]}`;
+                            display.appendChild(li);
+                            console.log(response[i].shortdef[j])
+                        }
+                    }
+                })
+        })
+
+    </script>
+</body>
+
+</html>

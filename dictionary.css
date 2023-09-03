@@ -1,0 +1,71 @@
+body {
+    background-color: #262626;
+    width: 100vm;
+}
+
+.container {
+    background-color: #CCCCFF;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    /* margin-right: 20%; */
+    border-radius: 40px;
+    height: 88%;
+}
+
+button {
+    font-size: larger;
+    background-color: #E6E6FF;
+    border: none;
+    position: absolute;
+    left: 76%;
+    margin-top: 3.4%;
+    cursor: pointer;
+}
+
+#text {
+    background-color: #E6E6FF;
+    width: 76%;
+    margin-left: 12%;
+    margin-top: 3%;
+    height: 50px;
+    border-radius: 25px;
+    padding-left: 3%;
+    font-size: large;
+    color: #000040;
+    border: 2px solid #000040;
+}
+
+#display {
+    padding: 4%;
+    overflow-y: auto;
+    background-color: #E6E6FF;
+    margin-left: 3%;
+    width: 86%;
+    margin-top: 2%;
+    border-radius: 30px;
+    height: 57%;
+    font-weight: normal;
+    color: #000;
+
+}
+
+li,
+h3 {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    color: black;
+    animation: typing 4s steps(40) forwards, blink-caret 0.75s infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
